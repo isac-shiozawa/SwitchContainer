@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <viewController id="lFE-sL-CVa" customClass="ForthView" customModule="SwitchContainer" customModuleProvider="target">
+            <layoutGuides>
+                <viewControllerLayoutGuide type="top" id="44l-Ew-nx6"/>
+                <viewControllerLayoutGuide type="bottom" id="3vH-RD-GAy"/>
+            </layoutGuides>
+            <view key="view" contentMode="scaleToFill" id="umr-8Z-ihE">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iN0-l3-epB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <color key="backgroundColor" red="1" green="0.95258236162037047" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="iN0-l3-epB" firstAttribute="bottom" secondItem="3vH-RD-GAy" secondAttribute="top" id="Gsn-wW-Gyn"/>
+                    <constraint firstItem="iN0-l3-epB" firstAttribute="top" secondItem="umr-8Z-ihE" secondAttribute="top" id="RFF-pD-l27"/>
+                    <constraint firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="ZXS-fr-wzG"/>
+                    <constraint firstItem="iN0-l3-epB" firstAttribute="leading" secondItem="umr-8Z-ihE" secondAttribute="leading" id="bxP-SA-fnt"/>
+                </constraints>
+            </view>
+            <point key="canvasLocation" x="-244.5" y="-89.5"/>
+        </viewController>
+    </objects>
+</document>

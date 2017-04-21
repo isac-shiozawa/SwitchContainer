@@ -14,6 +14,13 @@
 		C149F2B01E8DFBF9005B19F1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C149F2AE1E8DFBF9005B19F1 /* LaunchScreen.storyboard */; };
 		C149F2BB1E8DFBF9005B19F1 /* SwitchContainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F2BA1E8DFBF9005B19F1 /* SwitchContainerTests.swift */; };
 		C149F2C61E8DFBF9005B19F1 /* SwitchContainerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F2C51E8DFBF9005B19F1 /* SwitchContainerUITests.swift */; };
+		C149F2D41E8DFC19005B19F1 /* SwitchContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F2D31E8DFC19005B19F1 /* SwitchContainerViewController.swift */; };
+		C149F2D71E8E0402005B19F1 /* FirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C149F2D61E8E0402005B19F1 /* FirstView.xib */; };
+		C149F2D91E8E041C005B19F1 /* SuvViewList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C149F2D81E8E041C005B19F1 /* SuvViewList.swift */; };
+		C149F2DB1E8E04EF005B19F1 /* SecondView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C149F2DA1E8E04EF005B19F1 /* SecondView.xib */; };
+		C149F2DD1E8E0515005B19F1 /* ForthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C149F2DC1E8E0515005B19F1 /* ForthView.xib */; };
+		C149F2DF1E8E056A005B19F1 /* ThirdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C149F2DE1E8E056A005B19F1 /* ThirdView.xib */; };
+		C149F2E11E8E81D0005B19F1 /* SwitchContainerScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C149F2E01E8E81D0005B19F1 /* SwitchContainerScrollView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +54,13 @@
 		C149F2C11E8DFBF9005B19F1 /* SwitchContainerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwitchContainerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C149F2C51E8DFBF9005B19F1 /* SwitchContainerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchContainerUITests.swift; sourceTree = "<group>"; };
 		C149F2C71E8DFBF9005B19F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C149F2D31E8DFC19005B19F1 /* SwitchContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwitchContainerViewController.swift; path = advance/SwitchContainerViewController.swift; sourceTree = "<group>"; };
+		C149F2D61E8E0402005B19F1 /* FirstView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FirstView.xib; path = subviews/FirstView.xib; sourceTree = "<group>"; };
+		C149F2D81E8E041C005B19F1 /* SuvViewList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuvViewList.swift; sourceTree = "<group>"; };
+		C149F2DA1E8E04EF005B19F1 /* SecondView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SecondView.xib; path = subviews/SecondView.xib; sourceTree = "<group>"; };
+		C149F2DC1E8E0515005B19F1 /* ForthView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForthView.xib; sourceTree = "<group>"; };
+		C149F2DE1E8E056A005B19F1 /* ThirdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ThirdView.xib; path = subviews/ThirdView.xib; sourceTree = "<group>"; };
+		C149F2E01E8E81D0005B19F1 /* SwitchContainerScrollView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SwitchContainerScrollView.xib; path = advance/SwitchContainerScrollView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +111,15 @@
 		C149F2A41E8DFBF9005B19F1 /* SwitchContainer */ = {
 			isa = PBXGroup;
 			children = (
+				C149F2D51E8E0240005B19F1 /* subviews */,
 				C149F2A51E8DFBF9005B19F1 /* AppDelegate.swift */,
 				C149F2A71E8DFBF9005B19F1 /* ViewController.swift */,
 				C149F2A91E8DFBF9005B19F1 /* Main.storyboard */,
 				C149F2AC1E8DFBF9005B19F1 /* Assets.xcassets */,
 				C149F2AE1E8DFBF9005B19F1 /* LaunchScreen.storyboard */,
 				C149F2B11E8DFBF9005B19F1 /* Info.plist */,
+				C149F2D31E8DFC19005B19F1 /* SwitchContainerViewController.swift */,
+				C149F2E01E8E81D0005B19F1 /* SwitchContainerScrollView.xib */,
 			);
 			path = SwitchContainer;
 			sourceTree = "<group>";
@@ -123,6 +140,18 @@
 				C149F2C71E8DFBF9005B19F1 /* Info.plist */,
 			);
 			path = SwitchContainerUITests;
+			sourceTree = "<group>";
+		};
+		C149F2D51E8E0240005B19F1 /* subviews */ = {
+			isa = PBXGroup;
+			children = (
+				C149F2D61E8E0402005B19F1 /* FirstView.xib */,
+				C149F2D81E8E041C005B19F1 /* SuvViewList.swift */,
+				C149F2DA1E8E04EF005B19F1 /* SecondView.xib */,
+				C149F2DC1E8E0515005B19F1 /* ForthView.xib */,
+				C149F2DE1E8E056A005B19F1 /* ThirdView.xib */,
+			);
+			name = subviews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -236,7 +265,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				C149F2B01E8DFBF9005B19F1 /* LaunchScreen.storyboard in Resources */,
+				C149F2DB1E8E04EF005B19F1 /* SecondView.xib in Resources */,
+				C149F2D71E8E0402005B19F1 /* FirstView.xib in Resources */,
 				C149F2AD1E8DFBF9005B19F1 /* Assets.xcassets in Resources */,
+				C149F2DF1E8E056A005B19F1 /* ThirdView.xib in Resources */,
+				C149F2E11E8E81D0005B19F1 /* SwitchContainerScrollView.xib in Resources */,
+				C149F2DD1E8E0515005B19F1 /* ForthView.xib in Resources */,
 				C149F2AB1E8DFBF9005B19F1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +296,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C149F2D41E8DFC19005B19F1 /* SwitchContainerViewController.swift in Sources */,
+				C149F2D91E8E041C005B19F1 /* SuvViewList.swift in Sources */,
 				C149F2A81E8DFBF9005B19F1 /* ViewController.swift in Sources */,
 				C149F2A61E8DFBF9005B19F1 /* AppDelegate.swift in Sources */,
 			);
@@ -512,6 +548,7 @@
 				C149F2CC1E8DFBF9005B19F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C149F2CD1E8DFBF9005B19F1 /* Build configuration list for PBXNativeTarget "SwitchContainerTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +557,7 @@
 				C149F2CF1E8DFBF9005B19F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C149F2D01E8DFBF9005B19F1 /* Build configuration list for PBXNativeTarget "SwitchContainerUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +566,7 @@
 				C149F2D21E8DFBF9005B19F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

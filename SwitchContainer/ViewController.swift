@@ -8,18 +8,42 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController:UIViewController, UIScrollViewDelegate {
+    var main:SwitchContainerViewController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        print("Call viewDidLoad()")
+        main = SwitchContainerViewController.instance()
+        
+        main.initData(self, controller: self)
+        //main.setOnScreenFlag(true)
+        main.addViewFromNIB("FirstView")
+        main.addViewFromNIB("SecondView")
+        main.addViewFromNIB("ThirdView")
+        main.addViewFromNIB("ForthView")
+        main.makeView()
+        
+        self.view.addSubview(main)
+
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    //MARK:-UIScrollViewDelegate
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        main.scrollViewDidScroll(scrollView)
+    }
+    
+    //MARK:-
 }
 
