@@ -13,8 +13,8 @@ class SwitchContainerViewController:UIView{
     
     //ヘッダスクロールデータ
     @IBOutlet weak var scrollHeader: UIScrollView!
-     var floatingHeader:UIView?
-    let headerOnes:CGFloat = 3.0
+    var floatingHeader:UIView?
+    var headerOnes:CGFloat = 3.0
     var isOnscreen = false
     //メインスクロールデータ
     @IBOutlet weak var scrollMain: UIScrollView!
@@ -31,7 +31,7 @@ class SwitchContainerViewController:UIView{
     // MARK:- 独自メソド
     func addViewFromNIB(_ name:String, header:String? = nil){
         let content:ChildViewController = UINib(nibName: name, bundle: nil).instantiate(withOwner: self, options: nil)[0] as! ChildViewController
-        content.setIndex(containers.count, function: buttonTappedNumber)
+        content.setIndex(containers.count)
         childs.append(content)
 
         //コンテナ属性追加
@@ -59,6 +59,11 @@ class SwitchContainerViewController:UIView{
     }
     func setOnScreenFlag(_ flag:Bool){
         self.isOnscreen = flag
+    }
+    func setOneScreenCount(_ num:Int){
+        if 0 < num {
+            self.headerOnes = CGFloat(num)
+        }
     }
     
     let CHECK = 100
@@ -120,20 +125,23 @@ class SwitchContainerViewController:UIView{
         self.scrollMain.setContentOffset(CGPoint(x:CGFloat(pageNow) * getWidth(), y:0), animated: true)
         //ヘッダ遷移
         if(!isOnscreen){
-            switch pageNow {
-                case 0:
-                    self.scrollHeader.setContentOffset(CGPoint(x:0, y:0), animated: true)
-                    break
-                case (containers.count - 1):
-                    self.scrollHeader.setContentOffset(CGPoint(x:CGFloat(containers.count - 3) * getHeaderWidth(), y:0), animated: true)
-                    break
-                default:
-                    self.scrollHeader.setContentOffset(CGPoint(x:CGFloat(pageNow - 1) * getHeaderWidth(), y:0), animated: true)
-                    break
+            if pageNow < getPadding() {
+                self.scrollHeader.setContentOffset(CGPoint(x:0, y:0), animated: true)
+                return
             }
+            var tmp = containers.count
+            tmp = tmp - getPadding() - 1
+            if tmp < pageNow {
+                self.scrollHeader.setContentOffset(CGPoint(x: (CGFloat(containers.count) - headerOnes) * getHeaderWidth(), y:0), animated: true)
+                return
+            }
+            
+            self.scrollHeader.setContentOffset(CGPoint(x:CGFloat(pageNow - getPadding() + 1) * getHeaderWidth(), y:0), animated: true)
         }
     }
-    
+    func getPadding()->Int{
+        return Int(headerOnes / 2.0 + 0.5)
+    }
     
     //ボタンをタップした際に行われる処理
     func buttonTapped(_ sender: UIButton){
@@ -145,9 +153,6 @@ class SwitchContainerViewController:UIView{
         scrollMain.contentOffset = offset
         
         
-    }
-    func buttonTappedNumber(_ num: Int){
-        print("tap \(num)")
     }
     
     
@@ -191,17 +196,12 @@ class ChildHeaderView: UIView{
 /// メインになるViewControllerはこれを継承して作る
 class ChildViewController: UIViewController{
     var index:Int!
-    var call = { (index: Int) -> Void in }
     
     
-    func setIndex(_ i:Int, function:@escaping ((_ index: Int) -> Void)){
+    func setIndex(_ i:Int){
         index = i
-        call = function
     }
     
-    func callView(){
-        call(index)
-    }
     
     func getTitle()->String{
         return ""

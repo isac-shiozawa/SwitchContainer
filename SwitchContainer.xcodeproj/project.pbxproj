@@ -146,12 +146,12 @@
 		C149F2D51E8E0240005B19F1 /* subviews */ = {
 			isa = PBXGroup;
 			children = (
-				C149F2D61E8E0402005B19F1 /* FirstView.xib */,
 				C149F2D81E8E041C005B19F1 /* SuvViewList.swift */,
-				C149F2DA1E8E04EF005B19F1 /* SecondView.xib */,
-				C149F2DC1E8E0515005B19F1 /* ForthView.xib */,
-				C149F2DE1E8E056A005B19F1 /* ThirdView.xib */,
 				D77509271EADB081000ED453 /* FirstHeaderView.xib */,
+				C149F2D61E8E0402005B19F1 /* FirstView.xib */,
+				C149F2DC1E8E0515005B19F1 /* ForthView.xib */,
+				C149F2DA1E8E04EF005B19F1 /* SecondView.xib */,
+				C149F2DE1E8E056A005B19F1 /* ThirdView.xib */,
 			);
 			name = subviews;
 			sourceTree = "<group>";

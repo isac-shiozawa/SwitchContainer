@@ -14,15 +14,21 @@ class ViewController:UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        print("Call viewDidLoad()")
         main = SwitchContainerViewController.instance()
         
         main.initData(self, controller: self)
         //main.setOnScreenFlag(true)//trueにしたら1ページ表示
+        main.setOneScreenCount(5)//１ページに表示するヘッダの数　初期値は３
+        
+        main.addViewFromNIB("FirstView")
         main.addViewFromNIB("FirstView", header:"FirstHeaderView")//タイトル部分にもviewを指定するならこんな感じ
         main.addViewFromNIB("SecondView")
+        main.addViewFromNIB("SecondView", header:"FirstHeaderView")
         main.addViewFromNIB("ThirdView")
+        main.addViewFromNIB("ThirdView", header:"FirstHeaderView")
         main.addViewFromNIB("ForthView")
+        main.addViewFromNIB("ForthView", header:"FirstHeaderView")
+        
         main.makeView()
         
         self.view.addSubview(main)

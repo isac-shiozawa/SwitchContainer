@@ -20,13 +20,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iN0-l3-epB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iN0-l3-epB">
+                        <rect key="frame" x="8" y="8" width="359" height="651"/>
                         <color key="backgroundColor" red="1" green="0.65804907016859804" blue="0.81730330448516608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="hTN-T5-p78" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="bottom" constant="8" id="HIe-Ha-smm"/>
+                    <constraint firstItem="iN0-l3-epB" firstAttribute="leading" secondItem="ol4-z4-J1S" secondAttribute="leading" constant="8" id="Jk0-af-XG4"/>
+                    <constraint firstItem="iN0-l3-epB" firstAttribute="top" secondItem="ol4-z4-J1S" secondAttribute="top" constant="8" id="NCq-Oh-I3p"/>
+                    <constraint firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" constant="8" id="mtJ-QP-vLv"/>
+                </constraints>
             </view>
             <point key="canvasLocation" x="19" y="-162"/>
         </viewController>

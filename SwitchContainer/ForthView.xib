@@ -21,16 +21,16 @@
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iN0-l3-epB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="8" y="8" width="359" height="667"/>
                         <color key="backgroundColor" red="1" green="0.97322606411047285" blue="0.69434485348619412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 <constraints>
-                    <constraint firstItem="iN0-l3-epB" firstAttribute="bottom" secondItem="3vH-RD-GAy" secondAttribute="top" id="Gsn-wW-Gyn"/>
-                    <constraint firstItem="iN0-l3-epB" firstAttribute="top" secondItem="umr-8Z-ihE" secondAttribute="top" id="RFF-pD-l27"/>
-                    <constraint firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="ZXS-fr-wzG"/>
-                    <constraint firstItem="iN0-l3-epB" firstAttribute="leading" secondItem="umr-8Z-ihE" secondAttribute="leading" id="bxP-SA-fnt"/>
+                    <constraint firstItem="iN0-l3-epB" firstAttribute="bottom" secondItem="3vH-RD-GAy" secondAttribute="top" constant="8" id="Gsn-wW-Gyn"/>
+                    <constraint firstItem="iN0-l3-epB" firstAttribute="top" secondItem="umr-8Z-ihE" secondAttribute="top" constant="8" id="RFF-pD-l27"/>
+                    <constraint firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" constant="8" id="ZXS-fr-wzG"/>
+                    <constraint firstItem="iN0-l3-epB" firstAttribute="leading" secondItem="umr-8Z-ihE" secondAttribute="leading" constant="8" id="bxP-SA-fnt"/>
                 </constraints>
             </view>
             <point key="canvasLocation" x="-244.5" y="-89.5"/>
