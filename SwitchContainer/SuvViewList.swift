@@ -8,6 +8,10 @@
 
 import UIKit
 
+class FirstHeaderView: ChildHeaderView{
+
+}
+
 class FirstView: ChildViewController {
     
     override func getTitle()->String{

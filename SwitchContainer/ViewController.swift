@@ -18,8 +18,8 @@ class ViewController:UIViewController, UIScrollViewDelegate {
         main = SwitchContainerViewController.instance()
         
         main.initData(self, controller: self)
-        //main.setOnScreenFlag(true)
-        main.addViewFromNIB("FirstView")
+        //main.setOnScreenFlag(true)//trueにしたら1ページ表示
+        main.addViewFromNIB("FirstView", header:"FirstHeaderView")//タイトル部分にもviewを指定するならこんな感じ
         main.addViewFromNIB("SecondView")
         main.addViewFromNIB("ThirdView")
         main.addViewFromNIB("ForthView")

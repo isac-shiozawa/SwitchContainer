@@ -21,6 +21,7 @@
 		C149F2DD1E8E0515005B19F1 /* ForthView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C149F2DC1E8E0515005B19F1 /* ForthView.xib */; };
 		C149F2DF1E8E056A005B19F1 /* ThirdView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C149F2DE1E8E056A005B19F1 /* ThirdView.xib */; };
 		C149F2E11E8E81D0005B19F1 /* SwitchContainerScrollView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C149F2E01E8E81D0005B19F1 /* SwitchContainerScrollView.xib */; };
+		D77509281EADB081000ED453 /* FirstHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D77509271EADB081000ED453 /* FirstHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		C149F2DC1E8E0515005B19F1 /* ForthView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ForthView.xib; sourceTree = "<group>"; };
 		C149F2DE1E8E056A005B19F1 /* ThirdView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ThirdView.xib; path = subviews/ThirdView.xib; sourceTree = "<group>"; };
 		C149F2E01E8E81D0005B19F1 /* SwitchContainerScrollView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SwitchContainerScrollView.xib; path = advance/SwitchContainerScrollView.xib; sourceTree = "<group>"; };
+		D77509271EADB081000ED453 /* FirstHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = FirstHeaderView.xib; path = subviews/FirstHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		C149F2A41E8DFBF9005B19F1 /* SwitchContainer */ = {
 			isa = PBXGroup;
 			children = (
+				D77509291EADB85F000ED453 /* secontainer */,
 				C149F2D51E8E0240005B19F1 /* subviews */,
 				C149F2A51E8DFBF9005B19F1 /* AppDelegate.swift */,
 				C149F2A71E8DFBF9005B19F1 /* ViewController.swift */,
@@ -118,8 +121,6 @@
 				C149F2AC1E8DFBF9005B19F1 /* Assets.xcassets */,
 				C149F2AE1E8DFBF9005B19F1 /* LaunchScreen.storyboard */,
 				C149F2B11E8DFBF9005B19F1 /* Info.plist */,
-				C149F2D31E8DFC19005B19F1 /* SwitchContainerViewController.swift */,
-				C149F2E01E8E81D0005B19F1 /* SwitchContainerScrollView.xib */,
 			);
 			path = SwitchContainer;
 			sourceTree = "<group>";
@@ -150,8 +151,18 @@
 				C149F2DA1E8E04EF005B19F1 /* SecondView.xib */,
 				C149F2DC1E8E0515005B19F1 /* ForthView.xib */,
 				C149F2DE1E8E056A005B19F1 /* ThirdView.xib */,
+				D77509271EADB081000ED453 /* FirstHeaderView.xib */,
 			);
 			name = subviews;
+			sourceTree = "<group>";
+		};
+		D77509291EADB85F000ED453 /* secontainer */ = {
+			isa = PBXGroup;
+			children = (
+				C149F2D31E8DFC19005B19F1 /* SwitchContainerViewController.swift */,
+				C149F2E01E8E81D0005B19F1 /* SwitchContainerScrollView.xib */,
+			);
+			name = secontainer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,6 +279,7 @@
 				C149F2DB1E8E04EF005B19F1 /* SecondView.xib in Resources */,
 				C149F2D71E8E0402005B19F1 /* FirstView.xib in Resources */,
 				C149F2AD1E8DFBF9005B19F1 /* Assets.xcassets in Resources */,
+				D77509281EADB081000ED453 /* FirstHeaderView.xib in Resources */,
 				C149F2DF1E8E056A005B19F1 /* ThirdView.xib in Resources */,
 				C149F2E11E8E81D0005B19F1 /* SwitchContainerScrollView.xib in Resources */,
 				C149F2DD1E8E0515005B19F1 /* ForthView.xib in Resources */,

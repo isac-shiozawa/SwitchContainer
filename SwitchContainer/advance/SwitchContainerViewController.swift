@@ -21,6 +21,7 @@ class SwitchContainerViewController:UIView{
     var floating:UIView?
     var containers:[UIView] = []
     var childs:[ChildViewController] = []
+    var headers:[ChildHeaderView?] = []
     //共通
     var pageNow:Int = 0
     // MARK:- 
@@ -28,7 +29,7 @@ class SwitchContainerViewController:UIView{
         return UINib(nibName:"SwitchContainerScrollView", bundle: nil).instantiate(withOwner: self, options: nil)[0] as! SwitchContainerViewController
     }
     // MARK:- 独自メソド
-    func addViewFromNIB(_ name:String){
+    func addViewFromNIB(_ name:String, header:String? = nil){
         let content:ChildViewController = UINib(nibName: name, bundle: nil).instantiate(withOwner: self, options: nil)[0] as! ChildViewController
         content.setIndex(containers.count, function: buttonTappedNumber)
         childs.append(content)
@@ -41,6 +42,15 @@ class SwitchContainerViewController:UIView{
         content.view.frame = container.bounds
         container.addSubview(content.view)
         content.didMove(toParentViewController: self.masterViewController)
+        
+        //ヘッダ管理
+        if( header != nil){
+            let view:ChildHeaderView = UINib(nibName: header!, bundle: nil).instantiate(withOwner: self, options: nil)[0] as! ChildHeaderView
+            
+            headers.append(view)
+        }else{
+            headers.append(nil)
+        }
     }
     func initData(_ delegate:UIScrollViewDelegate, controller:UIViewController) {
         //print("self.scrollMain \(self.scrollMain)")
@@ -70,24 +80,11 @@ class SwitchContainerViewController:UIView{
             floating?.addSubview(containers[i])
             //ヘッダスクロールデータ
             let pointHeader:CGFloat = getHeaderWidth() * CGFloat(i)
-            print("point \(i) = \(pointHeader)")
-            let view:UIView = UIView(frame: CGRect(x: pointHeader, y: 0, width: getHeaderWidth(), height: scrollHeader.bounds.height))
-            let label:UILabel = UILabel(frame:view.bounds)
-            label.text = childs[i].getTitle()
-            label.sizeToFit()
-            label.center = CGPoint(x: getHeaderWidth()/2.0, y: scrollHeader.bounds.height/2.0)
-//            label.isUserInteractionEnabled = true
-//            label.tag = i
-            view.addSubview(label)
-            let button:UIButton = UIButton(frame:view.bounds)
-            button.tag = i
-            button.addTarget(self, action: #selector(self.buttonTapped(_:)), for: .touchUpInside)
-            view.addSubview(button)
+            let view:ChildHeaderView = ChildHeaderView.instance(frame: CGRect(x: pointHeader, y: 0, width: getHeaderWidth(), height: scrollHeader.bounds.height), headerview:headers[i], title: childs[i].getTitle(), index: i, master: self)
             floatingHeader?.addSubview(view)
         }
         self.scrollMain.addSubview(floating!)
         self.scrollMain.bounces = false
-        
         
         self.scrollHeader.addSubview(floatingHeader!)
         self.scrollHeader.bounces = false
@@ -157,6 +154,41 @@ class SwitchContainerViewController:UIView{
 }
 
 
+/// ヘッダはこれを継承して作る
+class ChildHeaderView: UIView{
+    var masterViewController:SwitchContainerViewController? = nil
+    
+    class func instance(frame: CGRect, headerview:ChildHeaderView?, title:String, index:Int, master:SwitchContainerViewController)->ChildHeaderView{
+        let view:ChildHeaderView
+        if(headerview == nil){
+            view = ChildHeaderView(frame: frame)
+            //
+            let labelTitle:UILabel = UILabel(frame:view.bounds)
+            labelTitle.text = title
+            labelTitle.sizeToFit()
+            labelTitle.center = CGPoint(x: view.bounds.width/2.0, y: view.bounds.height/2.0)
+            view.addSubview(labelTitle)
+        }else{
+            view = headerview!
+            view.frame = frame
+        }
+        view.masterViewController = master
+        //かぶせるようにボタンを設置
+        let button:UIButton = UIButton(frame:view.bounds)
+        button.tag = index
+        button.addTarget(view, action: #selector(view.buttonTapped(_:)), for: .touchUpInside)
+        view.addSubview(button)
+        
+        return view
+    }
+    
+    func buttonTapped(_ sender: UIButton){
+        masterViewController?.buttonTapped(sender)
+    }
+
+}
+
+/// メインになるViewControllerはこれを継承して作る
 class ChildViewController: UIViewController{
     var index:Int!
     var call = { (index: Int) -> Void in }
