@@ -144,7 +144,7 @@ class SwitchContainerViewController:UIView{
             return
         }
         var offset:CGPoint  = scrollMain.contentOffset;
-        offset.x = CGFloat(sender.tag)*getWidth() - (getWidth()/2.0)
+        offset.x = CGFloat(sender.tag)*getWidth()
         scrollMain.contentOffset = offset
         
         
